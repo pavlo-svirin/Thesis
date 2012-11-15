@@ -23,6 +23,7 @@ http.createServer(function (req, res) {
     req.on('end', function() {
         // empty 200 OK response for now
         res.writeHead(200, "OK", {'Content-Type': 'text/html'});
+	res.write('Hello');
         res.end();
     });
 }).listen(6969, '0.0.0.0');
