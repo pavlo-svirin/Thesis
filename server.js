@@ -15,15 +15,12 @@ http.createServer(function (req, res) {
         if( dt == '' )
             return;
 
-        q.push( dt, function(err){
-            console.log('Item added');
-        } );
     });
 
     req.on('end', function() {
         // empty 200 OK response for now
         res.writeHead(200, "OK", {'Content-Type': 'text/html'});
-	res.write('Hello');
+	res.write( '{ "nodes_up" : 10, "nodes_total" : 15  }'  );
         res.end();
     });
 }).listen(6969, '0.0.0.0');
